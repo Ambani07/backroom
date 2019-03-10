@@ -42,7 +42,7 @@ export class RentalService {
         street: "New York street",
         category: "One Room and parking",
         image: "http://via.placeholder.com/350x250",
-        bedrooms: 1,
+        bedrooms: 1,  
         description: "No charge for car parking. Please contact me for more infomation.",
         dailyRate: 1800,
         shared: false,
