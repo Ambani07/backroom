@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const mongoose = require('mongoose').set('debug', true);
 const config = require('./config/dev');
 const FakeDb = require('./fake-db');
 const Rental = require('./models/rental');
@@ -22,11 +22,11 @@ app.get('/api/v1/rentals', function(req, res){
 });
 
 app.get('/api/v1/rentals/:id', function(req, res){
-    const rentalId = req.param.id;
+    const rentalId = req.params.id;
 
-    Rental.findOne(rentalId, function(err, foundRentals){
+    Rental.find({"_id" : rentalId}, function(err, foundRentals){
         if(err){
-            res.status.caller(422).send({errors: [{title: "Rental Errror!", detals: "Could not find Rental!"}]});
+            res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
         }
         res.json(foundRentals);
     });
