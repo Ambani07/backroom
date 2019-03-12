@@ -3,7 +3,6 @@ const Rental = require('./models/rental');
 class FakeDb{
     constructor(){
         this.rentals = [{
-            rentalId : "1",
             title: "Nice view on ocean",
             city: "San Francisco",
             street: "Main street",
@@ -15,7 +14,6 @@ class FakeDb{
             dailyRate: 43
             },
             {
-            rentalId : "2",
             title: "Modern apartment in center",
             city: "New York",
             street: "Time Square",
@@ -27,7 +25,6 @@ class FakeDb{
             dailyRate: 11
             },
             {
-            rentalId : "3",
             title: "Old house in nature",
             city: "Spisska Nova Ves",
             street: "Banicka 1",
