@@ -3,8 +3,7 @@ const mongoose = require('mongoose').set('debug', true);
 const config = require('./config/dev');
 const FakeDb = require('./fake-db');
 const Rental = require('./models/rental');
-const rentalRoutes = require('./routes/rentals');
-var ObjectId = require('mongodb').ObjectID;
+
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
     const fakeDb = new FakeDb();
@@ -24,7 +23,7 @@ app.get('/api/v1/rentals', function(req, res){
 app.get('/api/v1/rentals/:id', function(req, res){
     const rentalId = req.params.id;
 
-    Rental.find({"_id" : rentalId}, function(err, foundRentals){
+    Rental.findOne({"_id" : rentalId}, function(err, foundRentals){
         if(err){
             res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
         }
