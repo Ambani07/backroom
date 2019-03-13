@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose').set('debug', true);
+const bodyParser = require('body-parser');
 const config = require('./config/dev');
 const FakeDb = require('./fake-db');
-const Rental = require('./models/rental');
+
+const rentalRoutes = require('./routes/rentals');
+const userRoutes = require('./routes/users');
 
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
@@ -12,25 +15,11 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
 
 const app = express();
 
-// app.use('/api/v1/rentals', rentalRoutes);
+app.use(bodyParser.json());
 
-app.get('/api/v1/rentals', function(req, res){
-    Rental.find({}, function(err, foundRentals){
-        res.json(foundRentals);
-    });
-});
+app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
 
-app.get('/api/v1/rentals/:id', function(req, res){
-    const rentalId = req.params.id;
-
-    Rental.findOne({"_id" : rentalId}, function(err, foundRentals){
-        if(err){
-            res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
-        }
-        res.json(foundRentals);
-    });
-
-});
 
 const PORT = process.env.PORT || 3001;
 
