@@ -1,8 +1,6 @@
 export class Rental{
-
     _id: string;
     title: string;
-    surburb: string;
     city: string;
     street: string;
     category: string;
