@@ -1,31 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">backroom</a>
+    <a class="navbar-brand" routerLink="/">backroom</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-      
-                    <li class="nav-item">
-                          <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0 btn-bwm-search" type="submit">Search</button>
-                          </form>
-                    </li>
-               
-                  
-                </ul>
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
-        </li>
-        
+              <li class="nav-item">
+                    <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-bwm-search" type="submit">Search</button>
+                    </form>
+              </li>
+          
+            
+          </ul>
+      <ul class="navbar-nav ml-auto">
+        <ng-container *ngIf="!auth.isAuthenticated()">
+          <li class="nav-item">
+            <a class="nav-link clickable" routerLink="/login" >Login</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link clickable" routerLink="/register">Register</a>
+          </li>
+      </ng-container>
+
+      <ng-container *ngIf="auth.isAuthenticated()">
+          <li  class="nav-item">
+              <a class="nav-link clickable" >{{auth.getUserName()}}</a>
+            </li>
+            <li  class="nav-item " >
+              <a class="nav-link clickable" (click)="logout()">Logout</a>
+            </li>
+      </ng-container>
+      
       </ul>
     </div>
     
