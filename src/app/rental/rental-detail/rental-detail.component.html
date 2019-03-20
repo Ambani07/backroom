@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-6">
         <!-- Will be replaced with map !!!! -->
-        <br-map [location]="rental.city + ', ' +  rental.street"></br-map>
+        <!-- <br-map [location]="rental.city + ', ' +  rental.street"></br-map> -->
       </div>
     </div>
   </div>
@@ -44,7 +44,9 @@
           </div>
         </div>
       </div>
-      <br-rental-detail-booking [price]="rental.dailyRate" ></br-rental-detail-booking>
+      <br-rental-detail-booking 
+      [rental]="rental" 
+      ></br-rental-detail-booking>
     </div>
   </div>
 </section>

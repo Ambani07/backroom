@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   private saveToken(token: string): string{
-    debugger;
     this.decodedToken = jwt.decodeToken(token);
 
     localStorage.setItem('backroom_auth', token);
