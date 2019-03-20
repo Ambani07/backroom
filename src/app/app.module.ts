@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './common/header/header.component';
 
@@ -24,7 +27,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     RentalModule,
-    AuthModule
+    AuthModule,
+    NgbModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
