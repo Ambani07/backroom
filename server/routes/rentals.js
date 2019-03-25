@@ -13,7 +13,7 @@ router.get('/secret', UserCrlt.authMiddleware, function(req,res){
 router.get('/manage', UserCrlt.authMiddleware, function(req, res){
     const user = res.locals.user;
 
-    Rental.where({user})
+    Rental.where({user: user})
             .populate('bookings')
             .exec(function(err, foundRentals){
                 if(err){
