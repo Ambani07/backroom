@@ -1,0 +1,112 @@
+<section id="rentalDetails" *ngIf="rental">
+    <div class="upper-section">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{rental.image}}" alt="">
+        </div>
+        <div class="col-md-6">
+          <!-- Will be replaced with map !!!! -->
+          <br-map 
+          [locationSubject]="locationSubject"
+          [location]="rental.city + ', ' +  rental.street"
+          ></br-map>
+        </div>
+      </div>
+    </div>
+  
+    <div class="details-section">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="rental">
+            <h2 class="rental-type {{rental.category}}">
+              Shared
+              <br-editable-select 
+              [(entity)]="rental" 
+              [style]="{'display': 'inline-block'}"
+              [options]="[true, false]"
+              [field]="'shared'" 
+              [className]="'rental-shared'"
+              (entityUpdated)="updateRental(rental._id, $event)"
+              ></br-editable-select>
+               
+               <br-editable-select 
+               [(entity)]="rental" 
+               [options]="rentalCategories"
+               [field]="'category'" 
+               [className]="'rental-category'"
+               (entityUpdated)="updateRental(rental._id, $event)"
+               ></br-editable-select>
+              </h2>
+            <div class="rental-owner">
+              <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="user image">
+              <span>{{rental.user.username}}</span>
+            </div>
+            
+            <br-editable-input 
+              [(entity)]="rental" 
+              [field]="'title'" 
+              [className]="'rental-title'"
+              (entityUpdated)="updateRental(rental._id, $event)"
+              ></br-editable-input>
+
+            <br-editable-input 
+              [(entity)]="rental" 
+              [field]="'city'" 
+              [transformView]="transformLocation"
+              [className]="'rental-city'"
+              (entityUpdated)="updateRental(rental._id, $event)"
+              ></br-editable-input>
+
+              <br-editable-input 
+              [(entity)]="rental" 
+              [field]="'street'" 
+              [className]="'rental-street'"
+              (entityUpdated)="updateRental(rental._id, $event)"
+              ></br-editable-input>
+
+            <div class="rental-room-info">
+              <span><i class="fa fa-building"></i> 
+                <br-editable-input 
+              [(entity)]="rental" 
+              [field]="'bedrooms'" 
+              [style]="{'display': 'inline-block'}"
+              [type]="'number'"
+              [className]="'rental-bedrooms'"
+              (entityUpdated) ="updateRental(rental._id, $event)"
+              ></br-editable-input> bedrooms</span>
+              <span><i class="fa fa-user"></i> {{countBedroomsAssets(4)}} guests</span>
+              <span><i class="fa fa-bed"></i> {{countBedroomsAssets(2)}} beds</span>
+            </div> 
+            
+            <br-editable-textarea 
+              [(entity)]="rental" 
+              [rows]="'6'"
+              [cols]="50"
+              [field]="'description'" 
+              [className]="'rental-description'"
+              (entityUpdated)="updateRental(rental._id, $event)"
+              ></br-editable-textarea>
+            <hr>
+            <div class="rental-assets">
+              <h3 class="title">Assets</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <span><i class="fa fa-asterisk"></i> Cooling</span>
+                  <span><i class="fa fa-thermometer"></i> Heating</span>
+                  <span><i class="fa fa-location-arrow"></i> Iron</span>
+                </div>
+                <div class="col-md-6">
+                  <span><i class="fa fa-desktop"></i> Working area</span>
+                  <span><i class="fa fa-cube"></i> Washing machine</span>
+                  <span><i class="fa fa-cube"></i> Dishwasher</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br-rental-detail-booking 
+        [rental]="rental" 
+        ></br-rental-detail-booking>
+      </div>
+    </div>
+  </section>
