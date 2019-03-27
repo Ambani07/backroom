@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapModule } from '../common/map/map.module';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { FormsModule } from '@angular/forms';
-import { NgPipesModule } from 'ngx-pipes';
+import { NgPipesModule, UcWordsPipe } from 'ngx-pipes';
+import { EditableModule } from '../common/components/editable/editable.module';
 
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
@@ -21,7 +22,9 @@ import { BookingService } from '../booking/shared/booking.service';
 
 import { UppserCasePipe } from '../common/pipes/uppercase.pipe';
 import { AuthGuard } from '../auth/shared/auth.guard';
+import { RentalGuard } from './shared/rental.guard';
 import { RentalCreateComponent } from './rental-create/rental-create.component';
+import { RentalUpdateComponent } from './rental-update/rental-update.component';
 
 
 const routes: Routes = [
@@ -30,6 +33,7 @@ const routes: Routes = [
     children: [
         {path: '', component: RentalListComponent},
         {path: 'new', component: RentalCreateComponent, canActivate: [AuthGuard]},
+        {path: ':rentalId/edit', component: RentalUpdateComponent, canActivate: [AuthGuard, RentalGuard]},
         {path: ':rentalId', component: RentalDetailComponent},
         {path: ':city/homes', component: RentalSearchComponent}
     ]
@@ -45,7 +49,8 @@ const routes: Routes = [
         UppserCasePipe,
         RentalDetailBookingComponent,
         RentalSearchComponent,
-        RentalCreateComponent
+        RentalCreateComponent,
+        RentalUpdateComponent
     ],
     imports: [
         CommonModule,
@@ -54,12 +59,15 @@ const routes: Routes = [
         NgPipesModule,
         MapModule,
         Daterangepicker,
-        FormsModule
+        FormsModule,
+        EditableModule
     ],
     providers: [
         RentalService,
         HelperService,
-        BookingService]
+        BookingService,
+        UcWordsPipe,
+        RentalGuard]
 })
 export class RentalModule {
 

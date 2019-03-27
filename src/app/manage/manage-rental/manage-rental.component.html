@@ -13,11 +13,12 @@
             </div>
             <div class="card-footer text-muted">
                <p>Created at {{ rental.createdAt | formatDate }}</p> <!-- Created At -->
+               <a class="btn btn-sm m-3 btn-warning" routerLink="/rentals/{{rental._id}}/edit">Edit</a> <!-- Link to rentals/new -->
                <button
                (click)="rentalDeleteIndex = i" 
                *ngIf="rentalDeleteIndex !== i"
                type="button"
-                class="btn btn-bwm btn-delete">Delete</button> <!-- Delete Rental Button -->
+                class="btn btn-danger">Delete</button> <!-- Delete Rental Button -->
                 <div *ngIf="rentalDeleteIndex === i" >
                   <p class="confirm-message">Do you confirm delete?</p>
                   <button (click)="deleteRental(rental._id)" class="btn btn-success mr-1" >Yes</button>
