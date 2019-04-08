@@ -6,6 +6,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './common/header/header.component';
+import { MapAutocompleteModule } from './common/map-autocomplete/map-autocomplete.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,6 @@ import { RentalModule } from './rental/rental.module';
 import { ManageModule } from './manage/manage.module';
 
 import { AuthModule } from './auth/auth.module';
-
 
 
 const routes: Routes = [
@@ -35,7 +35,8 @@ const routes: Routes = [
     NgbModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    ManageModule
+    ManageModule,
+    MapAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

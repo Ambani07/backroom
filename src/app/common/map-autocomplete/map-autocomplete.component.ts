@@ -1,0 +1,99 @@
+/// <reference types="@types/googlemaps" />
+import { Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter, Input } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
+// import { } from '@types/googlemaps';
+
+declare var google;
+
+@Component({
+  selector: 'br-map-autocomplete',
+  templateUrl: './map-autocomplete.component.html',
+  styleUrls: ['./map-autocomplete.component.scss']
+})
+export class MapAutocompleteComponent implements OnInit {
+  public latitude: number;
+  public longitude: number;
+
+  @Input() entity: any;
+
+  @Input() field: string;
+
+  @Output() setAddress: EventEmitter<any> = new EventEmitter();
+
+  isActiveInput: boolean = false;
+
+  @ViewChild('search')
+  private searchElement: ElementRef;
+
+  private componentForm = {
+    street_number: 'short_name', 
+    route: 'long_name'
+  }
+
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
+
+  ngOnInit() {
+        //set google maps defaults
+
+        this.latitude = 39.8282;
+        this.longitude = -98.5795;
+
+        //set current position
+    this.setCurrentPosition();
+
+     //load Places Autocomplete
+     this.mapsAPILoader.load().then(() => {
+      let autocomplete = new window['google'].maps.places.Autocomplete(this.searchElement.nativeElement, {
+        componentRestrictions: { country: 'ZA' },
+        types: ["address"]
+      });
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          // for (let component in this.componentForm) {
+          //   (<any>window).document.getElementByClassName(component).value = '';
+          //   (<any>window).document.getElementByClassName(component).disabled = false;
+          // }
+
+        //   // Get each component of the address from the place details
+        // // and fill the corresponding field on the form.
+        // for (var i = 0; i < place.address_components.length; i++) {
+        //   var addressType = place.address_components[i].types[0];
+        //   if (this.componentForm[addressType]) {
+        //     var val = place.address_components[i][this.componentForm[addressType]];
+        //     (<any>window).document.getElementById(addressType).value = val;
+        //   }
+        // }
+
+
+        
+          
+          //set latitude and longitude
+          this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
+          this.invokeEvent(place);
+        });
+      });
+    });
+  }
+
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+      });
+    }
+  }
+
+  invokeEvent(place: Object) {
+    this.setAddress.emit(place);
+  }
+}

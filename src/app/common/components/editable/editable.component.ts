@@ -12,8 +12,6 @@ export class EditableComponent implements OnChanges {
 
   @Input() className: string;
 
-
-
   @Input() style : any;
 
   @Output() entityUpdated = new EventEmitter();

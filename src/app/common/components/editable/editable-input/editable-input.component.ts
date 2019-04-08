@@ -14,6 +14,4 @@ export class EditableInputComponent extends EditableComponent {
     return value;
   };
 
-  // @Input() transformView = value => value;
-
 }

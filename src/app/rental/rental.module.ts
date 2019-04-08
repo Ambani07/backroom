@@ -7,6 +7,7 @@ import { Daterangepicker } from 'ng2-daterangepicker';
 import { FormsModule } from '@angular/forms';
 import { NgPipesModule, UcWordsPipe } from 'ngx-pipes';
 import { EditableModule } from '../common/components/editable/editable.module';
+import { MapAutocompleteModule } from '../common/map-autocomplete/map-autocomplete.module';
 
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
@@ -60,7 +61,8 @@ const routes: Routes = [
         MapModule,
         Daterangepicker,
         FormsModule,
-        EditableModule
+        EditableModule,
+        MapAutocompleteModule
     ],
     providers: [
         RentalService,
