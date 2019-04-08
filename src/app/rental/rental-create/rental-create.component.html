@@ -3,28 +3,34 @@
       <div class="row">
         <div class="col-md-5">
           <h1 class="page-title">Create Rental</h1>
+          
           <form #rentalForm="ngForm">
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text"
-                     class="form-control"
-                     id="title"
-                     name="title"
-                     [(ngModel)]="newRental.title" required>
+              <input 
+              type="text"
+              class="form-control"
+              id="title"
+              name="title"
+              [(ngModel)]="newRental.title" required>
             </div>
+
+          <br-map-autocomplete 
+          (setAddress)="updatedAddress($event)">
+          </br-map-autocomplete>
   
             <div class="form-group">
-              <label for="city">City</label>
-              <input type="text"
+              
+              <input type="hidden"
                      class="form-control"
                      id="city"
                      name="city"
                      [(ngModel)]="newRental.city" required>
-            </div>
+            </div> 
   
             <div class="form-group">
-              <label for="street">Street</label>
-              <input type="text"
+             
+              <input type="hidden"
                      class="form-control"
                      id="street"
                      name="street"

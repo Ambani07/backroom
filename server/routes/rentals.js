@@ -123,9 +123,9 @@ router.delete('/:id', UserCrlt.authMiddleware, function(req,res){
 
 //CREATE RENTAL
 router.post('', UserCrlt.authMiddleware, function(req, res){
-    const {title, city, street, category, image, shared, bedrooms, description, dailyRate} = req.body;
+    const {title, city, suburb, street, category, image, shared, bedrooms, description, dailyRate} = req.body;
     const user = res.locals.user;
-    const rental = new Rental({title, city, street, category, image, shared, bedrooms, description, dailyRate});
+    const rental = new Rental({title, city, suburb, street, category, image, shared, bedrooms, description, dailyRate});
     rental.user = user;
 
     Rental.create(rental, function(err, newRental){

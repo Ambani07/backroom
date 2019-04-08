@@ -1,0 +1,15 @@
+<div class="form-group">
+<label for="city">Rental Address</label>
+<input #search
+  type="text" 
+  placeholder=""
+  autocorrect="off"
+  autocapitalize="off" 
+  specialcheck="off"
+
+  (setAddress)="getAddress($event)"
+  class="form-control"
+  name="search"
+  
+  >
+</div>
