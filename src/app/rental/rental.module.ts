@@ -26,6 +26,8 @@ import { AuthGuard } from '../auth/shared/auth.guard';
 import { RentalGuard } from './shared/rental.guard';
 import { RentalCreateComponent } from './rental-create/rental-create.component';
 import { RentalUpdateComponent } from './rental-update/rental-update.component';
+import { RentalHomeComponent } from './rental-home/rental-home.component';
+import { SearchBoxComponent } from '../common/search-box/search-box.component';
 
 
 const routes: Routes = [
@@ -51,7 +53,9 @@ const routes: Routes = [
         RentalDetailBookingComponent,
         RentalSearchComponent,
         RentalCreateComponent,
-        RentalUpdateComponent
+        RentalUpdateComponent,
+        RentalHomeComponent,
+        SearchBoxComponent
     ],
     imports: [
         CommonModule,

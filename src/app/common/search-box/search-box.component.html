@@ -1,0 +1,33 @@
+<!-- Masthead -->
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <h1 class="page-title"  >Your Home All Around Kasi</h1>
+          <div class="col-12 col-md-10 col-lg-8">
+              <form class="card card-sm">
+                  <div class="card-body row no-gutters align-items-center">
+                      
+                      <div class="col">
+                         
+                          <input 
+                    (keyup.enter)="search(citySearch.value)"
+                      class="form-control form-control-lg form-control-borderless" 
+                      type="search"
+                       placeholder="Search location"
+                        aria-label="Search"
+                        #citySearch>
+                      </div>
+                      <!--end of col-->
+                      <div class="col-auto">
+                          <button (click)="search(citySearch.value)" class="btn btn-outline-light my-2 my-sm-0 btn-bwm-search" type="button "><i class="fa fa-search h4 text-body"></i></button>
+                      </div>
+                      <!--end of col-->
+                  </div>
+              </form>
+          </div>
+          <!--end of col-->
+      </div>
+    </div>
+   </header> 
