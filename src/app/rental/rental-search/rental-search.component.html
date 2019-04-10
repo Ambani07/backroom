@@ -1,7 +1,7 @@
 <br-search-box></br-search-box>
 <div class="container">
 <section id="rentalListing">
-  <h1 *ngIf="rentals.length > 0" class="page-title">Homes in {{city | lowercase | ucwords}}</h1>
+  <h2 *ngIf="rentals.length > 0" class="page-title-secondary m-3">Homes in {{city | lowercase | ucwords}}</h2>
   <h1 *ngIf="errors.length > 0" class="page-title">
     <p *ngFor="let error of errors">
       {{error.detail}}

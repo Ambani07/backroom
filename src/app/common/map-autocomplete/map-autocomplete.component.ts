@@ -1,9 +1,6 @@
 /// <reference types="@types/googlemaps" />
 import { Component, OnInit, ViewChild, ElementRef, NgZone, Output, EventEmitter, Input } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
-// import { } from '@types/googlemaps';
-
-declare var google;
 
 @Component({
   selector: 'br-map-autocomplete',

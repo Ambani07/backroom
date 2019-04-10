@@ -10,18 +10,18 @@
                   <div class="card-body row no-gutters align-items-center">
                       
                       <div class="col">
-                         
-                          <input 
-                    (keyup.enter)="search(citySearch.value)"
-                      class="form-control form-control-lg form-control-borderless" 
-                      type="search"
-                       placeholder="Search location"
+                        <input #search
+                        (keyup.enter)="search($event)"
+                        class="form-control form-control-lg form-control-borderless" 
+                        type="search"
+                        placeholder="Search location"
                         aria-label="Search"
-                        #citySearch>
+                        >
                       </div>
-                      <!--end of col-->
+
+
                       <div class="col-auto">
-                          <button (click)="search(citySearch.value)" class="btn btn-outline-light my-2 my-sm-0 btn-bwm-search" type="button "><i class="fa fa-search h4 text-body"></i></button>
+                          <button  class="btn btn-outline-light my-2 my-sm-0 btn-bwm-search" type="button "><i class="fa fa-search h4 text-body"></i></button>
                       </div>
                       <!--end of col-->
                   </div>
