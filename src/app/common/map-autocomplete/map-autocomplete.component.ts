@@ -25,11 +25,6 @@ export class MapAutocompleteComponent implements OnInit {
   @ViewChild('search')
   private searchElement: ElementRef;
 
-  private componentForm = {
-    street_number: 'short_name', 
-    route: 'long_name'
-  }
-
   constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
 
   ngOnInit() {
@@ -56,24 +51,6 @@ export class MapAutocompleteComponent implements OnInit {
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
-
-          // for (let component in this.componentForm) {
-          //   (<any>window).document.getElementByClassName(component).value = '';
-          //   (<any>window).document.getElementByClassName(component).disabled = false;
-          // }
-
-        //   // Get each component of the address from the place details
-        // // and fill the corresponding field on the form.
-        // for (var i = 0; i < place.address_components.length; i++) {
-        //   var addressType = place.address_components[i].types[0];
-        //   if (this.componentForm[addressType]) {
-        //     var val = place.address_components[i][this.componentForm[addressType]];
-        //     (<any>window).document.getElementById(addressType).value = val;
-        //   }
-        // }
-
-
-        
           
           //set latitude and longitude
           this.latitude = place.geometry.location.lat();

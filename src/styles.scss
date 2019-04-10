@@ -3,29 +3,25 @@
 @import 'scss/rental-detail';
 
 html, body, p{
-    color: $main-text-color;
+
+  color: $main-dark-color;
 }
 
-.apartment{
-    color: #a72da3;
+.nav-link{
+  color: $main-dark-color !important;
 }
 
-.condo{
-    color: #d68000;
+.apartment, .condo, .house{
+    color: $main-dark-color;
 }
 
-.house{
-     color: #bf1818;
-}
 
 .clickable{
   cursor: pointer;
 }
 
-
-
 .bwm-form {
-    color: $main-text-color;
+    color: $main-color;
   
     form {
       margin-bottom: 10px;
@@ -87,4 +83,22 @@ html, body, p{
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+
+///////////////////////////////////////////////////////////////////////////
+header.masthead {
+  height: 55vh;
+  background-image: linear-gradient(
+      to right bottom,
+       rgba($main-dark-color, 0.8),
+       rgba($main-color, 0.8),), 
+        url('assets/images/town.jpg');
+  background-position: top; 
+  position: relative;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
