@@ -10,7 +10,7 @@
 
 // Font Mixins
 @mixin body-font {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -60,3 +60,13 @@ header.masthead {
 .overlay{
   opacity: 0.1 !important;
 }
+
+.main-header{
+  color: #fff;
+  background-color: #DC3545;
+}
+
+.card{
+  background-color: transparent !important;
+}
+

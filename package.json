@@ -45,6 +45,7 @@
     "mongoose": "^5.4.17",
     "ng2-daterangepicker": "^2.0.12",
     "ng6-toastr-notifications": "^1.0.4",
+    "ngx-counter": "^0.3.2",
     "ngx-pipes": "^2.4.1",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",

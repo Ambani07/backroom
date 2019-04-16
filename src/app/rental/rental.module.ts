@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgPipesModule, UcWordsPipe } from 'ngx-pipes';
 import { EditableModule } from '../common/components/editable/editable.module';
 import { MapAutocompleteModule } from '../common/map-autocomplete/map-autocomplete.module';
+import { CounterModule } from 'ngx-counter';
 
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
@@ -15,6 +16,7 @@ import { RentalComponent } from './rental.component';
 import { RentalSearchComponent } from './rental-search/rental-search.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+import { FooterComponent } from '../common/footer/footer.component';
 
 import { RentalService } from './shared/rental.service';
 import { HelperService } from '../common/service/helper.service';
@@ -55,7 +57,8 @@ const routes: Routes = [
         RentalCreateComponent,
         RentalUpdateComponent,
         RentalHomeComponent,
-        SearchBoxComponent
+        SearchBoxComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,
@@ -66,7 +69,8 @@ const routes: Routes = [
         Daterangepicker,
         FormsModule,
         EditableModule,
-        MapAutocompleteModule
+        MapAutocompleteModule,
+        CounterModule.forRoot()
     ],
     providers: [
         RentalService,

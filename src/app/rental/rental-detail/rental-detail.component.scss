@@ -14,7 +14,7 @@
     .rental {
       &-type {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 700;
         text-transform: uppercase;
         margin: 0;
       }
@@ -44,7 +44,7 @@
 
       &-city {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 700;
         margin-bottom: 20px;
       }
 
@@ -81,4 +81,18 @@
       }
     }
   }
+}
+
+.breadcrumb{
+  background-color: #F8F9FA;
+}
+
+.breadcrumb-item{
+  font-family: inherit;
+}
+
+.rent-title{
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: $main-dark-color !important;
 }

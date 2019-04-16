@@ -1,5 +1,8 @@
 <br-search-box></br-search-box>
      <div class="container">
+       <div class="row">
+
+       
         <h2 class="page-title m-3">New Rentals</h2>
         <span class="line"></span>
         <section id="rentalListing">
@@ -8,11 +11,48 @@
             <div class="row">
               <div class='col-md-3 col-xs-6' *ngFor="let rental of rentals">
           
-                <br-rental-list-item [rental]="rental"></br-rental-list-item>
+                <!-- <br-rental-list-item [rental]="rental"></br-rental-list-item> -->
                 
               </div>
           
               
             </div>
+
           </section>
      </div>
+      <div class="row text-center summary">
+        <div class="col-md-3 col-sm-3 ">
+        <div class="counter">
+        <i class="fa fa-tag fa-2x"></i>
+
+        <ngx-counter class="timer count-title count-number" theme="gray" font="Roboto, sans-serif" countValue=-1 speed="2" limit=45 size="medium" color="gray" bgcolor="#F5F5DC"></ngx-counter>
+        <p class="count-text ">Regular Ads</p>
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+        <div class="counter">
+        <i class="fa fa-map fa-2x"></i>
+        <ngx-counter class="timer count-title count-number" theme="gray" font="Roboto, sans-serif" countValue=-1 speed="2" limit=121 size="medium" color="gray" bgcolor="#F5F5DC"></ngx-counter>
+        <p class="count-text ">Locations</p>
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+        <div class="counter">
+        <i class="fa fa-users fa-2x"></i>
+        <ngx-counter class="timer count-title count-number" theme="gray" font="Roboto, sans-serif" countValue=-1 speed="2" limit=132 size="medium" color="gray" bgcolor="#F5F5DC"></ngx-counter>
+        <p class="count-text ">Verified Members</p>
+        </div></div>
+        <div class="col-md-3 col-sm-3">
+        <div class="counter">
+        <i class="fa fa-certificate fa-2x"></i>
+        <ngx-counter class="timer count-title count-number" theme="gray" font="Roboto, sans-serif" countValue=-1 speed="2" limit=62 size="medium" color="gray" bgcolor="#F5F5DC"></ngx-counter>
+        <p class="count-text ">Premium Ads</p>
+        </div>
+        </div>
+      </div>
+     
+     </div>
+
+
+     
+     <br-footer></br-footer>
