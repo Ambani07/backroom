@@ -1,0 +1,77 @@
+.button {
+    width: 140px;
+    height: 45px;
+    background-color: #DC3545;
+    border: none;
+    // border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    color: #fff !important;
+
+   -webkit-box-shadow: 0 15px 10px #777;
+   -moz-box-shadow: 0 15px 10px #777;
+   box-shadow: 0 15px 10px #777;
+   -webkit-transform: rotate(-3deg);
+   -moz-transform: rotate(-3deg);
+   -o-transform: rotate(-3deg);
+   -ms-transform: rotate(-3deg);
+   transform: rotate(-3deg);
+    }
+  
+  .button:hover {
+    box-shadow: 5px 5px 10px rgba(220, 53, 75, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .brand{
+    color: #fff;
+    box-shadow: 0px 2px 6px rgba(229, 0, 22, 0.4);
+    text-shadow: 2px 2px 5px #DC3545;
+    padding: inherit;
+    &-back{
+      background-color: #DC3545 !important;
+      padding-right: 0px;
+      padding-left: 20px;
+    }
+    &-room{
+      background-color: #CA303F !important;
+      padding-left: 0px;
+      padding-right: 20px;
+    }
+  }
+  .navbar-brand:hover{
+    box-shadow: 0px 2px 18px rgba(229, 0, 22, 0.4);
+    text-shadow: 3px 3px 6px #DC3545;
+    transition: all 0.3s ease 0s;
+  }
+
+  .btn-group .btn-account{
+    font-family: inherit !important;
+  }
+
+.btn-group .dropdown-menu a{
+  color:#000 !important;
+
+}
+
+.nav-link:hover{
+  background-color: #DC3545;
+  color: #fff !important;
+  transition: all 0.3s ease 0s;
+}
+
+.nav-link, .nav-account{
+  font-weight: 700;
+}
+
+.nav-item{
+  margin-right: 5px !important;
+}
+
+.navbar{
+  padding: 25px;
+}
+

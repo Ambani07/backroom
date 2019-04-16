@@ -16,17 +16,23 @@ a{
         font-weight: 500;
         font-size: 12px;
         text-transform: uppercase;
+        color: $main-dark-color;
       }
       .card-title {
-        font-size: 19px;
+        font-size: 17px;
         margin: 3px 0;
         color: $main-color;
+        font-family: inherit;
       }
       .card-text {
         font-size: 14px;
         font-weight: 300;
-        color: #7e7e7e;
+        color: $main-red-color;
         margin-bottom: 0;
+        
+      }
+      .card-link{
+        font-size: 14px;
       }
     }
   }

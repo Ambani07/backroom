@@ -1,20 +1,40 @@
+  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-      <a class="navbar-brand" routerLink="/rentals">backroom</a>
+      <a class="navbar-brand" routerLink="/rentals">
+        <span class="brand brand-back" >back</span>
+        <span class="brand brand-room">room</span>
+      </a>
+      <button class="button d-block d-sm-none pull-right"><i class="fa fa-plus"></i> Post An Ad</button>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <ng-container *ngIf="!auth.isAuthenticated()">
-            <li class="nav-item">
-              <a class="nav-link clickable" routerLink="/login" >Login</a>
-            </li>
-            <li  class="nav-item">
-              <a class="nav-link clickable" routerLink="/register">Sign Up</a>
-            </li>
+
+              <li  class="nav-item ">
+                  <button class="button d-none d-sm-block d-md-block "><i class="fa fa-plus"></i> Post An Ad</button>
+              </li>
+
+            <li  class="nav-item ">
+                <div class="nav-item dropdown clickable">
+                    <a class="nav-account ml-2 dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-user"></i> My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item nav-link" routerLink="/login" ><i class="fa fa-sign-in"></i> Login</a>
+                      <a class="dropdown-item nav-link " routerLink="/register" ><i class="fa fa-user-plus"></i> Sign Up</a>
+                      <hr>
+                      <a class="dropdown-item nav-link" routerLink="#" ><i class="fa fa-key"></i> Forgot Password</a>
+                      <a class="dropdown-item nav-link " routerLink="#" ><i class="fa fa-eye"></i> Find me a home</a>
+                    </div>
+                  </div>
+              </li>            
         </ng-container>
   
         <ng-container *ngIf="auth.isAuthenticated()">
@@ -39,6 +59,7 @@
         
         </ul>
       </div>
+      
     </nav>
   
 

@@ -2,13 +2,23 @@
 @import 'scss/variables';
 @import 'scss/rental-detail';
 
-html, body, p{
-
+html, body, p, .page-title {
+  font-family: 'Roboto', sans-serif;
   color: $main-dark-color;
+  
 }
 
-.nav-link{
+.nav-link, .button, .navbar-brand, .page-title, .nav-account, .footer, .breadcrumb-item{
+  
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+
   color: $main-dark-color !important;
+}
+
+.nav-account{
+  background-color: inherit;
 }
 
 .apartment, .condo, .house{
@@ -83,6 +93,7 @@ html, body, p{
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;  
+  color: #fff !important;
 }
 
 
@@ -102,4 +113,15 @@ header.masthead {
   -o-background-size: cover;
   background-size: cover;
 
+}
+
+input{
+  border-radius: 0px !important;
+  background-color: #fff !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  color: $main-dark-color !important;
 }
