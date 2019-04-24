@@ -22,7 +22,8 @@ exports.auth = function(req, res){
         if(user.hasSamePassword(password)){
             const token = jwt.sign({
                 userId: user.id,
-                username: user.username
+                username: user.username,
+                email: user.email
                 }, config.SECRET , { expiresIn: '1h'});
                 
             //return JWT token

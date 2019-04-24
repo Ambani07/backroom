@@ -21,6 +21,7 @@ import { FooterComponent } from '../common/footer/footer.component';
 import { RentalService } from './shared/rental.service';
 import { HelperService } from '../common/service/helper.service';
 import { BookingService } from '../booking/shared/booking.service';
+import { ContactService } from '../contact/shared/contact.service';
 
 
 import { UppserCasePipe } from '../common/pipes/uppercase.pipe';
@@ -30,6 +31,7 @@ import { RentalCreateComponent } from './rental-create/rental-create.component';
 import { RentalUpdateComponent } from './rental-update/rental-update.component';
 import { RentalHomeComponent } from './rental-home/rental-home.component';
 import { SearchBoxComponent } from '../common/search-box/search-box.component';
+import { RentalDetailContactComponent } from './rental-detail/rental-detail-contact/rental-detail-contact.component';
 
 
 const routes: Routes = [
@@ -58,7 +60,8 @@ const routes: Routes = [
         RentalUpdateComponent,
         RentalHomeComponent,
         SearchBoxComponent,
-        FooterComponent
+        FooterComponent,
+        RentalDetailContactComponent
     ],
     imports: [
         CommonModule,
@@ -76,6 +79,7 @@ const routes: Routes = [
         RentalService,
         HelperService,
         BookingService,
+        ContactService,
         UcWordsPipe,
         RentalGuard]
 })

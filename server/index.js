@@ -6,9 +6,10 @@ const FakeDb = require('./fake-db');
 
 const path = require('path');
 
-const rentalRoutes = require('./routes/rentals');
-const userRoutes = require('./routes/users'),
-      bookingRoutes =  require('./routes/bookings');
+const rentalRoutes = require('./routes/rentals'),
+      userRoutes = require('./routes/users'),
+      bookingRoutes =  require('./routes/bookings'),
+      contactRoutes = require('./routes/contacts');
 
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
+app.use('/api/v1/contacts', contactRoutes);
 
 if(process.env.NODE_ENV === 'production'){
     const appPath = path.join(__dirname, '..', 'dist/backroom');

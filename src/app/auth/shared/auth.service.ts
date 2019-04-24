@@ -9,6 +9,7 @@ const jwt = new JwtHelperService();
 class DecodedToken{
   exp: number = 0;
   username: string = '';
+  email: string = '';
 }
 
 @Injectable()
@@ -65,6 +66,10 @@ export class AuthService {
 
   public getUserName(): string{
     return this.decodedToken.username;
+  }
+
+  public getUserEmail(): string{
+    return this.decodedToken.email;
   }
 
   
