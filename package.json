@@ -42,7 +42,7 @@
     "jquery": "^3.2.1",
     "jsonwebtoken": "^8.5.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.17",
+    "mongoose": "^5.7.5",
     "ng2-daterangepicker": "^2.0.12",
     "ng6-toastr-notifications": "^1.0.4",
     "ngx-counter": "^0.3.2",
